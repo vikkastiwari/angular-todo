@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TodoComponent } from './todo.component';
 
@@ -8,7 +9,8 @@ describe('TodoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TodoComponent ]
+      declarations: [ TodoComponent ],
+      imports: [ReactiveFormsModule]
     })
     .compileComponents();
 

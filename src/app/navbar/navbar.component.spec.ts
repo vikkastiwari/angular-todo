@@ -1,6 +1,9 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserModule } from '@angular/platform-browser';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -8,7 +11,7 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      declarations: [ NavbarComponent ],
     })
     .compileComponents();
 
@@ -20,4 +23,9 @@ describe('NavbarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should check the title', () => {
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain(component.title);
+    })
 });

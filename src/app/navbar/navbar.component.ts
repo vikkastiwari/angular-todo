@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  title:string = 'TODO APP';
+
   constructor() { }
 
   ngOnInit(): void {
