@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { TodoComponent } from './todo.component';
 
@@ -21,5 +21,10 @@ describe('TodoComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create a FormGroup comprised of FormControls', () => {
+    component.ngOnInit();
+    expect(component.todoForm instanceof FormGroup).toBe(true);
   });
 });
